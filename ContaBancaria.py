@@ -1,6 +1,5 @@
 ﻿from abc import ABCMeta, abstractmethod
 
-
 class ContaBancaria(metaclass = ABCMeta):
     def __init__(self, numeroConta = None, agencia = None, codCliente = None, saldo = 0):
         self.__numeroConta = numeroConta
@@ -16,10 +15,6 @@ class ContaBancaria(metaclass = ABCMeta):
     def depositar(self):
         pass
 
-    @abstractmethod
-    def getCodCliente(self):
-        pass
-
     @property
     def getNumeroConta(self):
         return self.__numeroConta
@@ -29,4 +24,9 @@ class ContaBancaria(metaclass = ABCMeta):
         return self.__agencia
 
     def imprimriInformacoes(self):
-        print(f'Número da Conta: {self.__numeroConta}\nAgência: {self.__agencia}\nCódigo do Cliente: {self.codCliente}\nSaldo atual: {self.saldo}')
+        return f"""
+        Número da Conta: {self.__numeroConta}
+        Agência: {self.__agencia}
+        Código do Cliente: {self.codCliente}
+        Saldo atual: {self.saldo}
+        """

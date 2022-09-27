@@ -6,16 +6,12 @@ class ContaPoupanca(ContaBancaria):
         super().__init__(numeroConta, agencia, codCliente, saldo)
         self.cartaoDebito = cartaoDebito
 
-    def cadastrar(self):
-        super().imprimriInformacoes()
-        print(f'Cartão de Débito: {self.cartaoDebito}')
-
-    def getCodCliente(self):
-        super().getCodCliente()
-        return self.codCliente    
-
-    def getSaldo(self):
-        return self.saldo
+    def cadastrar(self, numeroConta, agencia, codCliente, saldo, cartaoDebito):
+        self.__numeroConta = numeroConta
+        self.__agencia = agencia
+        self.codCliente = codCliente
+        self.saldo = saldo
+        self.cartaoDebito = cartaoDebito
 
     def __rendimentoMes(self):
         self.saldo = self.saldo + (self.saldo * 0.5 / 100)
@@ -28,4 +24,7 @@ class ContaPoupanca(ContaBancaria):
     def sacar(self, valorSacado):
         self.saldo -= valorSacado
         self.__rendimentoMes()
+
+    def imprimriInformacoes(self):
+        return super().imprimriInformacoes() + f"""Cartão Débito: {self.cartaoDebito}"""
     
