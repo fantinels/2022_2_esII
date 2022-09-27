@@ -3,32 +3,36 @@ from ContaPoupanca import ContaPoupanca
 
 # Conta Corrente
 print('----- CONTA CORRENTE ----')
-cc = ContaCorrente('12436-9', 7844, 133, 0, True)
-cc.cadastrar()
+cc = ContaCorrente()
+cc.cadastrar('12436-9', 7844, 133, 0, True)
+print(cc.imprimriInformacoes())
 
 print('-' * 30)
+
 
 cc.depositar(450)
-cc.cadastrar()
+print(cc.imprimriInformacoes())
 
 print('-' * 30)
 
+
 cc.sacar(50)
-cc.cadastrar()
+print(cc.imprimriInformacoes())
 
 ########################################
 
 # Conta Poupança
 print('----- CONTA POUPANÇA ----')
-cp = ContaPoupanca('00000-1', 5556, 144, 0, True)
-cp.cadastrar()
+cp = ContaPoupanca()
+cp.cadastrar('00000-1', 5556, 144, 0, True)
+print(cp.imprimriInformacoes())
 
 print('-' * 30)
 
 cp.depositar(500)
-cp.cadastrar()
+print(cp.imprimriInformacoes())
 
 print('-' * 30)
 
 cp.sacar(100)
-cp.cadastrar()
+print(cp.imprimriInformacoes())
